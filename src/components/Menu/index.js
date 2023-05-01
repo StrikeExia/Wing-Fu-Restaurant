@@ -22,8 +22,8 @@ const Menu = () => {
                 <p>Menu</p>
                 <MenuBox>
                 <Slider {...settings}>
-                    <img src={menuImg1} />
-                    <img src={menuImg2} />
+                    <img src={menuImg1} alt="Menu Page 1" />
+                    <img src={menuImg2} alt="Menu Page 2"/>
                 </Slider>
                 </MenuBox>
             </MenuContainer>
