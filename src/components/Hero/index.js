@@ -12,20 +12,16 @@ import {
 const Hero = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggle = () => {
-    setIsOpen(!isOpen);
-  };
-
   return (
     <HeroContainer>
-      <Navbar toggle={toggle} />
-      <Sidebar isOpen={isOpen} toggle={toggle} />
+      <Navbar toggle={() => setIsOpen(!isOpen)} />
+      <Sidebar isOpen={isOpen} toggle={() => setIsOpen(!isOpen)} />
       <HeroContent>
         <HeroItems>
           <HeroH1>Delicious Chinese Food</HeroH1>
           <HeroP>
             Take out and Dine in available
-            <br></br>No Delivery, Dine In closes @ 6:30pm
+            <br />No Delivery, Dine In closes @ 6:30pm
           </HeroP>
         </HeroItems>
       </HeroContent>

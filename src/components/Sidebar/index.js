@@ -19,7 +19,7 @@ const Sidebar = ({ isOpen, toggle }) => {
           <Link to="menu"
           activeClass="active"
           spy={true} smooth={true}
-          onClick={toggle} // Closes the sidebar after clicking
+          onClick={toggle}
           >
             Full Menu
           </Link>

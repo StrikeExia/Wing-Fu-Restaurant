@@ -34,7 +34,6 @@ const Menu = () => {
                 <img
                   src={menuImg1}
                   alt="Menu Page 1"
-                  onLoad={handleImageLoad}
                   style={{ width: "100%", height: "auto" }}
                 />
               </StyledZoomImage>
@@ -46,7 +45,6 @@ const Menu = () => {
                 <img
                   src={menuImg2}
                   alt="Menu Page 2"
-                  onLoad={handleImageLoad}
                   style={{ width: "100%", height: "auto" }}
                 />
               </StyledZoomImage>

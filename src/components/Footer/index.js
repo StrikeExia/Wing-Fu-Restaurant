@@ -11,15 +11,14 @@ import {
 
 const Footer = () => {
   return (
-    <div id="hours">
-      <FooterContainer>
+      <FooterContainer id="hours">
         <FooterWrap>
           <SocialMediaWrap>
             <SocialLogo>
               Hours of Operation
-              <br></br>Monday - Saturday: 12pm - 8pm
-              <br></br>Sunday: 4pm - 8pm
-              <br></br>Tel: 902-883-3188
+              <br />Monday - Saturday: 12pm - 8pm
+              <br />Sunday: 4pm - 8pm
+              <br />Tel: 902-883-3188
             </SocialLogo>
             <SocialIcons>
               <SocialIconLink
@@ -34,7 +33,6 @@ const Footer = () => {
           </SocialMediaWrap>
         </FooterWrap>
       </FooterContainer>
-    </div>
   );
 };
 
