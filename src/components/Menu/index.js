@@ -1,6 +1,13 @@
 import React from "react";
+import Zoom from "react-medium-image-zoom";
+import "react-medium-image-zoom/dist/styles.css";
 import Slider from "react-slick";
-import { MenuContainer, MenuBox } from "./MenuElements";
+import {
+  MenuContainer,
+  MenuBox,
+  handleImageLoad,
+  StyledZoomImage,
+} from "./MenuElements";
 import menuImg1 from "../../images/menu1.png";
 import menuImg2 from "../../images/menu2.png";
 import "slick-carousel/slick/slick.css";
@@ -21,8 +28,30 @@ const Menu = () => {
       <p>Menu</p>
       <MenuBox>
         <Slider {...settings}>
-          <img src={menuImg1} alt="Menu Page 1" />
-          <img src={menuImg2} alt="Menu Page 2" />
+          <div>
+            <Zoom>
+              <StyledZoomImage>
+                <img
+                  src={menuImg1}
+                  alt="Menu Page 1"
+                  onLoad={handleImageLoad}
+                  style={{ width: "100%", height: "auto" }}
+                />
+              </StyledZoomImage>
+            </Zoom>
+          </div>
+          <div>
+            <Zoom>
+              <StyledZoomImage>
+                <img
+                  src={menuImg2}
+                  alt="Menu Page 2"
+                  onLoad={handleImageLoad}
+                  style={{ width: "100%", height: "auto" }}
+                />
+              </StyledZoomImage>
+            </Zoom>
+          </div>
         </Slider>
       </MenuBox>
     </MenuContainer>
