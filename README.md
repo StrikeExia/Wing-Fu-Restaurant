@@ -1,1 +1,1 @@
-Simple website built for my parents owned restaurant
+Simple website built for my parents owned restaurant to help hone my web development skills!
