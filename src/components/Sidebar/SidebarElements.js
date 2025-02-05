@@ -5,22 +5,29 @@ import { FaTimes } from "react-icons/fa";
 export const SidebarContainer = styled.aside`
   position: fixed;
   z-index: 999;
-  width: 350px;
+  width: ${({ isOpen }) => (isOpen ? "300px" : "0")}; /* Default width */
+  max-width: 100%; /* Prevents sidebar from exceeding the screen size */
   height: 100%;
   background: #ffe4d9;
-  display: grid;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   top: 0;
   transition: 0.3s ease-in-out;
-  right: ${({ isOpen }) => (isOpen ? "0" : "-1300px")};
+  right: ${({ isOpen }) => (isOpen ? "0" : "-100%")}; /* Hide when closed */
 
-  @media screen and (max-width: 400px) {
-    width: 100%;
+  @media screen and (max-width: 768px) {
+    width: ${({ isOpen }) => (isOpen ? "100%" : "0")}; /* Full-screen sidebar on very small devices */
   }
 `;
 
 export const CloseIcon = styled(FaTimes)`
   color: #000;
+  font-size: 2rem;
+  position: absolute;
+  top: 1.2rem;
+  right: 1.5rem;
+  cursor: pointer;
 `;
 
 export const Icon = styled.div`
@@ -35,27 +42,20 @@ export const Icon = styled.div`
 `;
 
 export const SidebarMenu = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(1, 80px);
+  display: flex;
+  flex-direction: column;
+  width: 100%
   text-align: center;
-
-  @media screen and (max-width: 480px) {
-    grid-template-rows: repeat(1, 60px);
-  }
+  margin-top: 50px;
 `;
 
 export const SidebarLink = styled(Link)`
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 15px 0;
   font-size: 1.5rem;
-  text-decoration: none;
-  list-style: none;
-  transition: 0.2s ease-in-out;
-  text-decoration: none;
   color: #000;
+  text-decoration: none;
   cursor: pointer;
+  transition: 0.2s ease-in-out;
 
   &:hover {
     color: #fff;
