@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const handleImageLoad = () => {
   console.log("Image loaded");
-}
+};
 
 export const StyledZoomImage = styled.div`
 z-index: 1000;

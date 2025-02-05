@@ -1,4 +1,4 @@
-import React from "react";
+import { useRef, useEffect } from "react";
 import Zoom from "react-medium-image-zoom";
 import "react-medium-image-zoom/dist/styles.css";
 import Slider from "react-slick";
@@ -14,6 +14,10 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const Menu = () => {
+  const sliderRef = useRef(null); // References to the slider
+
+  const images = [menuImg1, menuImg2];
+
   const settings = {
     dots: true,
     fade: true,
@@ -21,35 +25,45 @@ const Menu = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    initialSlide: 0,
+    swipe: true, // Allows swiping while zoomed in
   };
+
+  // Keyboard navigation for easier use
+    useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === "ArrowRight") {
+        sliderRef.current.slickNext();
+      } else if (event.key === "ArrowLeft") {
+        sliderRef.current.slickPrev();
+      }
+      };
+
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    }
+  }, []);
+
+
   return (
     <MenuContainer id="menu">
       <p>Menu</p>
       <MenuBox>
-        <Slider {...settings}>
-          <div>
+        <Slider ref={sliderRef} {...settings}>
+          {images.map((img, index) => (
+            <div key={index}>          
             <Zoom>
               <StyledZoomImage>
                 <img
-                  src={menuImg1}
-                  alt="Menu Page 1"
-                  style={{ width: "100%", height: "auto" }}
+                  src={img}
+                  alt={`Menu Page ${index + 1}`}
+                  style={{ width: "100%", cursor: "zoom-in"}}
                 />
               </StyledZoomImage>
             </Zoom>
           </div>
-          <div>
-            <Zoom>
-              <StyledZoomImage>
-                <img
-                  src={menuImg2}
-                  alt="Menu Page 2"
-                  style={{ width: "100%", height: "auto" }}
-                />
-              </StyledZoomImage>
-            </Zoom>
-          </div>
+          ))}
         </Slider>
       </MenuBox>
     </MenuContainer>
