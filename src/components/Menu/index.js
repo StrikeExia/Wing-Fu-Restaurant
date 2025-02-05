@@ -5,7 +5,6 @@ import Slider from "react-slick";
 import {
   MenuContainer,
   MenuBox,
-  handleImageLoad,
   StyledZoomImage,
 } from "./MenuElements";
 import menuImg1 from "../../images/menu1.png";
