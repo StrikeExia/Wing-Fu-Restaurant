@@ -18,8 +18,6 @@ const Hero = () => {
       <Sidebar isOpen={isOpen} toggle={() => setIsOpen(!isOpen)} />
       <HeroContent>
         <HeroItems>
-          <HeroH1>CURRENTLY CLOSED FOR VACATION 
-            <br />FEB 25th - APR 11th</HeroH1>
           <HeroH1>Delicious Chinese Food</HeroH1>
           <HeroP>
             Take out and Dine in available
