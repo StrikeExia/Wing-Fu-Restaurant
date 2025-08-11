@@ -48,6 +48,8 @@ const Menu = () => {
   return (
     <MenuContainer id="menu">
       <p>Menu</p>
+        <p>This is our updated Menu starting August 2025! These prices are the correct prices!
+      </p>
       <MenuBox>
         <Slider ref={sliderRef} {...settings}>
           {images.map((img, index) => (
