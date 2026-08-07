@@ -36,7 +36,7 @@ function App() {
         </a>
         <nav className="desktop-nav" aria-label="Main navigation">
           <a href="#menu">Menu</a>
-          <a href="#hours">Hours &amp; location</a>
+          <a href="#hours">Hours</a>
         </nav>
         <a className="header-call" href="tel:+19028833188">Call to order</a>
       </header>

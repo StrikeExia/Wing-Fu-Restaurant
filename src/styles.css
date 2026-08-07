@@ -407,11 +407,10 @@ footer a {
 
 @media (max-width: 900px) {
   .site-header {
-    grid-template-columns: 1fr auto;
     padding: 0 24px;
   }
 
-  .desktop-nav { display: none; }
+  .desktop-nav { gap: 24px; }
 
   .hero {
     position: relative;
@@ -443,11 +442,21 @@ footer a {
 }
 
 @media (max-width: 650px) {
-  .site-header { height: 78px; }
+  .site-header {
+    height: 78px;
+    grid-template-columns: 1fr auto;
+  }
+
+  .desktop-nav {
+    gap: 16px;
+  }
+
+  .desktop-nav a {
+    font-size: 13px;
+  }
 
   .header-call {
-    padding: 10px 14px;
-    font-size: 12px;
+    display: none;
   }
 
   .hero {
