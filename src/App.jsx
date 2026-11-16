@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import logo from "./images/WingFu-Logo.png";
 import menuPageOne from "./images/menu1.png";
 import menuPageTwo from "./images/menu2.png";
+import { useLiveHours, SpecialNotices, ScheduleRows } from './LiveHours';
 
 const menuPages = [
   { src: menuPageOne, title: "Group dinners and family meals" },
@@ -9,6 +10,7 @@ const menuPages = [
 ];
 
 function App() {
+  const hours = useLiveHours();
   const [openMenuPage, setOpenMenuPage] = useState(null);
 
   useEffect(() => {
@@ -57,6 +59,7 @@ function App() {
         </section>
 
         <section className="menu-section" id="menu" aria-labelledby="menu-title">
+          <SpecialNotices hours={hours} />
           <div className="section-heading">
             <h2 id="menu-title">Our menu</h2>
             <p>Browse our current menu below. Tap or click either page to view it full size.</p>
@@ -77,7 +80,7 @@ function App() {
               </button>
             ))}
           </div>
-          <p className="menu-note">Menu updated August 2025. Prices may be subject to change.</p>
+          <p className="menu-note">Prices may be subject to change.</p>
         </section>
 
         <section className="visit-section" id="hours" aria-labelledby="visit-title">
@@ -92,17 +95,13 @@ function App() {
             <div className="visit-row">
               <p>Takeout</p>
               <div>
-                <strong>Monday – Wednesday</strong><span>12:00 pm – 8:00 pm</span>
-                <strong>Thursday – Saturday</strong><span>12:00 pm – 9:00 pm</span>
-                <strong>Sunday</strong><span>4:00 pm – 8:00 pm</span>
+                <ScheduleRows hours={hours} service="restaurant" />
               </div>
             </div>
             <div className="visit-row">
               <p>Dine-in</p>
               <div>
-                <strong>Monday – Wednesday</strong><span>12:00 pm – 6:30 pm</span>
-                <strong>Thursday – Saturday</strong><span>12:00 pm – 7:30 pm</span>
-                <strong>Sunday</strong><span>4:00 pm – 6:30 pm</span>
+                <ScheduleRows hours={hours} service="dining" />
               </div>
             </div>
             <div className="visit-row">
