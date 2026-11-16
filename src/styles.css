@@ -515,7 +515,8 @@ footer a {
   *, *::before, *::after { transition-duration: 0.01ms !important; }
 }
 
-.special-notices { display: grid; gap: 18px; margin-bottom: 44px; }
-.special-notice { background: #f2e3d8; border: 1px solid #d9b5a6; border-left: 5px solid var(--red); border-radius: 8px; padding: clamp(20px, 3vw, 32px); }
-.special-notice h2 { color: var(--red); font-family: Georgia, serif; font-size: clamp(25px, 3vw, 34px); margin: 0 0 12px; }
-.special-notice p { margin: 6px 0; line-height: 1.6; overflow-wrap: anywhere; }
+.menu-section:has(.special-notices) { padding-top: clamp(24px, 4vw, 48px); }
+.special-notices { display: grid; gap: 16px; margin-bottom: 32px; }
+.special-notice { background: #f2e3d8; border: 1px solid #d9b5a6; border-left: 5px solid var(--red); border-radius: 8px; padding: 20px 24px; }
+.special-notice h2 { color: var(--red); font-family: Georgia, serif; font-size: clamp(25px, 3vw, 34px); margin: 0 0 8px; }
+.special-notice p { margin: 4px 0; line-height: 1.6; overflow-wrap: anywhere; }
